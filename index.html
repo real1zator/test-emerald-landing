@@ -27,7 +27,7 @@ body{background:#09090b;color:#fafafa;font-family:'Manrope',sans-serif;-webkit-f
 .hero-overlay-2{display:none}
 .hero-content{position:relative;z-index:10;max-width:90rem;margin:0 auto;padding:6rem clamp(1rem,4vw,3rem) 5rem clamp(1.5rem,5vw,5rem);width:100%;display:flex;align-items:center}
 .hero-inner{max-width:clamp(320px,46rem,52rem)}
-.shimmer-word{display:block;white-space:nowrap;background:linear-gradient(90deg,#34d399 0%,#2dd4bf 15%,#fff 30%,#a7f3d0 45%,#6ee7b7 55%,#2dd4bf 70%,#34d399 85%,#fff 100%);background-size:280% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer-sweep 2.4s linear infinite;letter-spacing:.06em;font-size:clamp(2.4rem,5vw,4.2rem);margin-bottom:.15rem;filter:drop-shadow(0 3px 14px rgba(0,0,0,.8))}
+.shimmer-word{display:block;white-space:nowrap;background:linear-gradient(90deg,#34d399 0%,#2dd4bf 15%,#fff 30%,#a7f3d0 45%,#6ee7b7 55%,#2dd4bf 70%,#34d399 85%,#fff 100%);background-size:280% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer-sweep 2.4s linear infinite;letter-spacing:.04em;font-size:clamp(1rem,8.5vw,4.2rem);margin-bottom:.15rem;filter:drop-shadow(0 3px 14px rgba(0,0,0,.8))}
 @keyframes shimmer-sweep{0%{background-position:0% center}100%{background-position:300% center}}
 .blob{position:absolute;border-radius:50%;pointer-events:none;filter:blur(60px);animation:float-up 7s ease-in-out infinite}
 @keyframes float-up{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
@@ -48,9 +48,12 @@ body{background:#09090b;color:#fafafa;font-family:'Manrope',sans-serif;-webkit-f
 .trust{display:flex;flex-wrap:wrap;gap:1.5rem .75rem}
 .trust-item{display:flex;align-items:center;gap:.5rem}
 .trust-icon{width:15px;height:15px;color:#10b981;flex-shrink:0}
+.fixed-cta{position:fixed;bottom:0;left:0;right:0;z-index:200;padding:.85rem 1.25rem calc(.85rem + env(safe-area-inset-bottom,0px));background:rgba(7,10,7,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid rgba(52,211,153,.18);display:flex;gap:.75rem}
+.fixed-cta .btn-gold{flex:1;justify-content:center;padding:.8rem 1rem;font-size:.9375rem}
+.fixed-cta .btn-outline{flex:1;justify-content:center;padding:.8rem 1rem;font-size:.9375rem}
 .scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;animation:scroll-down 1.6s ease-in-out infinite}
 @keyframes scroll-down{0%,100%{transform:translateX(-50%) translateY(0);opacity:1}50%{transform:translateX(-50%) translateY(8px);opacity:.4}}
-@media(max-width:640px){.hero-content{padding:5rem 1rem 3rem}.trust{gap:.75rem}}
+@media(max-width:640px){.hero-content{padding:5rem 1rem 4rem}.trust{display:none}.scroll-ind{display:none}.hero .btns{display:none}}
 </style>
 </head><body>
 <!-- COVER HERO -->
@@ -104,6 +107,10 @@ body{background:#09090b;color:#fafafa;font-family:'Manrope',sans-serif;-webkit-f
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
   </div>
 </section>
+<div class="fixed-cta">
+  <a href="tel:+7XXXXXXXXXX" class="btn-gold"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> Позвонить</a>
+  <a href="#contact" class="btn-outline"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> Оставить заявку</a>
+</div>
 <script>
 window.addEventListener('scroll',function(){document.querySelector('.hero-bg').style.transform='translateY('+window.scrollY*0.35+'px)';},{passive:true});
 </script>
